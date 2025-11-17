@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>کفش اسپرت سفید - جزئیات محصول</title>
+<style>
+  @font-face {
+    font-family: Tanha;
+    src: url('../font/Tanha.eot');
+    src: url('../font/Tanha.eot?#iefix') format('embedded-opentype'),
+         url('../font/Tanha.woff') format('woff'),
+         url('../font/Tanha.ttf') format('truetype');
+    font-weight: normal;
+  }
+
+  body {
+  direction: rtl;
+  font-family: Tanha, sans-serif;
+   background: linear-gradient(65deg,#426eff 40%,#ba42ff 80%);
+  margin: 0;
+  padding: 40px 20px;
+  color: #141414;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+  .product-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 30px;
+  }
+
+  .product-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(66, 110, 255, 0.808);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 600px;
+    transition: transform 0.3s ease;
+    user-select: none;
+    background: #fff;
+  }
+  .product-image:hover {
+    transform: scale(1.04);
+  }
+  .product-image img {
+    max-width: 100%;
+    max-height: 580px;
+    object-fit: contain;
+  }
+
+  .product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #3b3b3b;
+    letter-spacing: 1.3px;
+  }
+
+  .product-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #555;
+    min-height: 150px;
+  }
+
+  .product-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #3afa00;
+    margin-bottom: 25px;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 8px #ba42ff22;
+  }
+
+  .options {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+  }
+  .option-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+  }
+  .option-group label {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #141414;
+  }
+  select, input[type=number] {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid #426eff;
+    font-size: 1rem;
+    font-family: Tanha, sans-serif;
+    outline: none;
+    cursor: pointer;
+    color: #141414;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  select:hover, select:focus,
+  input[type=number]:hover, input[type=number]:focus {
+    border-color: #ba42ff;
+    box-shadow: 0 0 8px #ba42ff77;
+  }
+  input[type=number] {
+    max-width: 80px;
+    text-align: center;
+  }
+
+  button.buy-button {
+    background: linear-gradient(65deg, #426eff 40%, #ba42ff 80%);
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 900;
+    font-family: tanha;
+    padding: 18px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(66, 110, 255, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  button.buy-button:hover {
+    background: linear-gradient(65deg, #5a84ff 40%, #d75cff 80%);
+    box-shadow: 0 14px 35px rgba(107, 119, 255, 0.9);
+  }
+  button.buy-button:active {
+    background: linear-gradient(65deg, #374eeb 40%, #a227d1 80%);
+  }
+
+  .reviews {
+    background: #f9f9f9;
+    color: #333;
+    border-radius: 15px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-height: 190px;
+    overflow-y: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  .reviews h3 {
+    margin-top: 0;
+    color: #426eff;
+  }
+  .reviews::-webkit-scrollbar {
+    width: 7px;
+  }
+  .reviews::-webkit-scrollbar-thumb {
+    background-color: #ba42ff;
+    border-radius: 10px;
+  }
+  .reviews::-webkit-scrollbar-track {
+    background: #eee;
+  }
+
+  /* ریسپانسیو */
+  @media (max-width: 900px) {
+    .product-container {
+      flex-direction: column;
+      padding: 25px 15px;
+      gap: 30px;
+    }
+    .product-image {
+      max-height: 450px;
+    }
+    .product-title {
+      font-size: 2rem;
+    }
+    .product-price {
+      font-size: 1.8rem;
+    }
+    button.buy-button {
+      font-size: 1.5rem;
+      padding: 16px 0;
+    }
+    .options {
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 480px) {
+    .product-title {
+      font-size: 1.7rem;
+    }
+    .product-price {
+      font-size: 1.4rem;
+    }
+    button.buy-button {
+      font-size: 1.3rem;
+      padding: 14px 0;
+    }
+    .options {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="product-container" role="main" aria-label="جزئیات محصول کفش اسپرت سفید">
+
+    <section class="product-image">
+      <img src="./Sh_1.png" alt="کفش اسپرت سفید با طراحی مدرن" />
+    </section>
+
+    <section class="product-details">
+
+      <h1 class="product-title">کفش اسپرت سفید</h1>
+
+      <p class="product-description">
+        کفش اسپرت سفید با طراحی مدرن، ساخته شده از مواد با کیفیت بالا، زیره مقاوم و کفی نرم برای راحتی بیشتر. مناسب استفاده روزمره و ورزشی.
+      </p>
+
+      <div class="product-price" aria-live="polite">قیمت: ۱,۲۰۰,۰۰۰ تومان</div>
+
+      <form action="#" method="post" class="options" aria-label="انتخاب ویژگی‌های محصول">
+
+        <div class="option-group">
+          <label for="size-select">انتخاب سایز</label>
+          <select id="size-select" name="size" required aria-required="true">
+            <option value="" disabled selected>سایز</option>
+            <option value="37">۳۷</option>
+            <option value="38">۳۸</option>
+            <option value="39">۳۹</option>
+            <option value="40">۴۰</option>
+            <option value="41">۴۱</option>
+            <option value="42">۴۲</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label for="quantity">تعداد</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required aria-required="true" />
+        </div>
+
+        <button type="submit" class="buy-button" aria-label="افزودن به سبد خرید">افزودن به سبد خرید</button>
+      </form>
+
+      <section class="reviews" aria-label="نقد و بررسی‌ها">
+        <h3>نقد و بررسی‌ها</h3>
+        <p><strong>کاربر محمد:</strong> کفش بسیار راحت و سبک است، مناسب پیاده‌روی روزانه.</p>
+        <p><strong>کاربر سارا:</strong> طراحی شیک و رنگ سفید عالی. پیشنهاد می‌کنم!</p>
+        <p><strong>کاربر علی:</strong> قیمت مناسب و کیفیت بالا، خرید ارزشمندی بود.</p>
+      </section>
+
+    </section>
+
+  </main>
+</body>
+</html>

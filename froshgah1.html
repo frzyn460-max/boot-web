@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @font-face {
+    font-family: Tanha;
+    src: url('../font/Tanha.eot');
+    src: url('../font/Tanha.eot?#iefix') format('embedded-opentype'),
+         url('../font/Tanha.woff') format('woff'),
+         url('../font/Tanha.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+
+    direction: rtl;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: Tanha;
+    background-color: #141414;
+    color: white;
+
+}
+
+
+.head{
+    background: linear-gradient(65deg,#426eff 40%,#ba42ff 80%);
+    /* background-image: url(../img.ir/backgroundweb22.jpg); */
+    padding: 80px;
+    color:white;
+    line-height: 3rem;
+    text-align: center;
+	border-radius: 15px;
+}
+
+
+/* کانتینر منو */
+  nav {
+    /* background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%); */
+	/* background-color: #362f2f; */
+  /* margin-top: 5px; */
+  display: inline-block;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+	border-radius: 15px;
+     position: sticky;
+    
+  }
+  ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  ul.menu > li {
+    position: relative;
+  }
+  ul.menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.menu > li:hover > a {
+    transition: all 0.3s ease;
+    display: inline-block;
+     transform: scale(1.1) translateY(-5px);
+  color: #0099ff; /* مثلا رنگ نارنجی وقتی هاور شد */
+    /* background-color: #ffffff;
+	color: #000000; */
+	border-radius: 15px;
+  }
+
+  /* زیرمنو */
+  ul.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #313131;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    z-index: 100;
+  }
+  ul.submenu li a {
+    padding: 12px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.submenu li a:hover {
+   background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%);
+   border-radius: 15px;
+  }
+  /* نمایش زیرمنو هنگام هاور روی آیتم اصلی */
+  ul.menu > li:hover > ul.submenu {
+    display: block;
+  }
+
+  /* برای راست به چپ بودن منو */
+  ul.menu, ul.submenu {
+    direction: rtl;
+  }
+
+  .products-section {
+  max-width: 1200px; /* حداکثر عرض برای بخش محصولات */
+  margin: 40px auto;  /* فاصله از بالا و پایین + وسط چین */
+  padding: 0 20px;    /* فاصله داخلی کناری برای موبایل */
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center; /* وسط چین کردن کارت‌ها داخل گرید */
+}
+
+.product-card {
+  width: 100%;
+  max-width: 320px; /* محدود کردن عرض هر کارت */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /* border: solid black; */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 183, 255, 0.76);
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transform: rotate(-17deg);
+}
+
+.product-info {
+  padding: 20px 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; /* وسط چین کردن متن داخل کارت */
+}
+
+.product-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: #666;
+  flex-grow: 1;
+}
+
+.product-price {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+  .product-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-image {
+    height: 160px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+  
+    <nav>
+  <ul class="menu">
+    <li>
+      <a href="kafsh.html">صفحه اصلی</a>
+    </li>
+    <li>
+      <a href="">فروشگاه</a>
+      <ul class="submenu">
+        <li><a href="froshgah1.html">کفش</a></li>
+        <li><a href="froshgah2.html">دیگر محصولات</a></li>
+       
+      </ul>
+    </li>
+    <li>
+      <a href="ma.html">درباره ما</a>
+    </li>
+    <li>
+      <a href="tamas.html">تماس با ما</a>
+      <ul class="submenu">
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<h1 style="text-align: center;">محصولات</h1>
+            <hr>
+
+            <section class="products-section" aria-label="محصولات کفش">
+           <br><br>
+  <div class="products-grid">
+    
+    <article class="product-card" tabindex="0" aria-labelledby="shoe1-name">
+             <a href="mahsole.html"><img src="./Sh_1.png" alt="کفش اسپرت سفید" class="product-image" /></a>
+      <div class="product-info">
+        <h3 id="shoe1-name" class="product-name">کفش اسپرت سفید</h3>
+        <p class="product-desc">کفش اسپرت راحت و سبک برای استفاده روزمره.</p>
+        <p class="product-price">1,200,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe2-name">
+      <img src="./Sh_2.png" alt="کفش چرمی قهوه‌ای" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe2-name" class="product-name">کفش اسپرت نقره ای</h3>
+        <p class="product-desc">کفش طرح جدید و زیبا مناسب پیاده روی.</p>
+        <p class="product-price">2,350,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe3-name">
+      <img src="./Sh_7.png" alt="کفش ورزشی مشکی" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe3-name" class="product-name">کفش کتونی سفید</h3>
+        <p class="product-desc">کفش کتونی زیبا با طراحی جذاب</p>
+        <p class="product-price">1,800,000 تومان</p>
+      </div>
+    </article>
+    
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe4-name">
+      <img src="./Sh_4.png" alt="کفش کتانی رنگارنگ" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe4-name" class="product-name">کفش اسپرت طلایی</h3>
+        <p class="product-desc">کفش سبک و زیبا برای استایل روزانه.</p>
+        <p class="product-price">1,650,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe5-name">
+     <a href="mahsole1.html">  <img src="./Sh_5.png" alt="کفش کالج قهوه‌ای" class="product-image" /></a>
+      <div class="product-info">
+        <h3 id="shoe5-name" class="product-name">کفش کالج قهوه‌ای</h3>
+        <p class="product-desc">کفش رسمی و راحت با طراحی کلاسیک.</p>
+        <p class="product-price">1,450,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe6-name">
+      <img src="./Sh_6.png" alt="کفش رسمی مشکی" class="product-image" />
+      
+      <div class="product-info">
+        <h3 id="shoe6-name" class="product-name">کفش بوت مشکی</h3>
+        <p class="product-desc">کفش رسمی با دوخت دقیق و کیفیت بی‌نظیر.</p>
+        <p class="product-price">2,700,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe2-name">
+      <img src="./کفش-فوتبال-نایک-فانتوم-طرح-اصلی-ساقدار-خاکستری-صورتی-nike-phantom-gt-gray-pink.webp" alt="کفش چرمی قهوه‌ای" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe2-name" class="product-name">کفش استوک</h3>
+        <p class="product-desc">کفش طرح جدید و زیبا</p>
+        <p class="product-price">3,250,000 تومان</p>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0" aria-labelledby="shoe2-name">
+      <img src="./کفش-فوتبال-پوما-فیوچر-سفید-صورتی-puma-future-white-pink.jpg" alt="کفش چرمی قهوه‌ای" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe2-name" class="product-name">کفش استوک</h3>
+        <p class="product-desc">کفش طرح جدید و زیبا </p>
+        <p class="product-price">2,000,000 تومان</p>
+      </div>
+    </article>
+    
+    <article class="product-card" tabindex="0" aria-labelledby="shoe2-name">
+      <img src="./xrS2fUYLkzlNAD7F.jpg" alt="کفش چرمی قهوه‌ای" class="product-image" />
+      <div class="product-info">
+        <h3 id="shoe2-name" class="product-name">کفش استوک</h3>
+        <p class="product-desc">کفش طرح جدید و زیبا </p>
+        <p class="product-price">2,100,000 تومان</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+</body>
+</html>

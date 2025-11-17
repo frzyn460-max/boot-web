@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+    font-family: Tanha;
+    src: url('../font/Tanha.eot');
+    src: url('../font/Tanha.eot?#iefix') format('embedded-opentype'),
+         url('../font/Tanha.woff') format('woff'),
+         url('../font/Tanha.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+
+    direction: rtl;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: Tanha;
+    background-color: #141414;
+    color: white;
+
+}
+
+/* کانتینر منو */
+  nav {
+    /* background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%); */
+	/* background-color: #362f2f; */
+  /* margin-top: 5px; */
+  display: inline-block;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+	border-radius: 15px;
+     position: sticky;
+    
+  }
+  ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  ul.menu > li {
+    position: relative;
+  }
+  ul.menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.menu > li:hover > a {
+    transition: all 0.3s ease;
+    display: inline-block;
+     transform: scale(1.1) translateY(-5px);
+  color: #0099ff; /* مثلا رنگ نارنجی وقتی هاور شد */
+    /* background-color: #ffffff;
+	color: #000000; */
+	border-radius: 15px;
+  }
+
+  /* زیرمنو */
+  ul.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #313131;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    z-index: 100;
+  }
+  ul.submenu li a {
+    padding: 12px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.submenu li a:hover {
+   background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%);
+   border-radius: 15px;
+  }
+  /* نمایش زیرمنو هنگام هاور روی آیتم اصلی */
+  ul.menu > li:hover > ul.submenu {
+    display: block;
+  }
+
+  /* برای راست به چپ بودن منو */
+  ul.menu, ul.submenu {
+    direction: rtl;
+  }
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+  <ul class="menu">
+    <li>
+      <a href="kafsh.html">صفحه اصلی</a>
+    </li>
+    <li>
+      <a href="#">فروشگاه</a>
+      <ul class="submenu">
+        <li><a href="froshgah1.html">کفش</a></li>
+        <li><a href="froshgah2.html">دیگر محصولات</a></li>
+       
+      </ul>
+    </li>
+    <li>
+      <a href="ma.html">درباره ما</a>
+    </li>
+    <li>
+      <a href="tamas.html">تماس با ما</a>
+      <ul class="submenu">
+      </ul>
+    </li>
+  </ul>
+</nav>
+<h3 style="padding-top: 35px;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ،
+   <br>و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،<br> و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،
+    <br>در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
+   <br>و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی،
+    و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</h3>
+</body>
+</html>

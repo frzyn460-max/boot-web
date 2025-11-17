@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazir', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #333;
+  color: white;
+  position: relative;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.logo p {
+  font-size: 14px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #f39c12;
+}
+
+.nav .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  list-style: none;
+  padding: 10px 0;
+  width: 200px;
+}
+
+.nav .submenu li {
+  padding: 10px;
+}
+
+.nav .submenu li a {
+  color: white;
+  padding: 10px;
+  display: block;
+}
+
+.nav li:hover .submenu {
+  display: block;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #333;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav li:hover .submenu {
+    display: none;
+  }
+}
+
+    </style>
+    <script>
+    const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('.nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <h1>بوت وب</h1>
+    <p>فروشگاه اینترنتی بوت وب</p>
+  </div>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="kafsh.html">صفحه اصلی</a></li>
+      <li class="dropdown">
+        <a href="#">فروشگاه</a>
+        <ul class="submenu">
+          <li><a href="froshgah1.html">کفش</a></li>
+          <li><a href="froshgah2.html">دیگر محصولات</a></li>
+        </ul>
+      </li>
+      <li><a href="ma.html">درباره ما</a></li>
+      <li class="dropdown">
+        <a href="tamas.html">تماس با ما</a>
+        <ul class="submenu">
+          <li><a href="#">فرم تماس</a></li>
+          <li><a href="#">آدرس و شماره‌ها</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="جستجو کن..." />
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="24" height="24">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</header>
+
+</body>
+</html>

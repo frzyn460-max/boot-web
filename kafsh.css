@@ -1,0 +1,628 @@
+@font-face {
+    font-family: Tanha;
+    src: url('../font/Tanha.eot');
+    src: url('../font/Tanha.eot?#iefix') format('embedded-opentype'),
+         url('../font/Tanha.woff') format('woff'),
+         url('../font/Tanha.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+
+    direction: rtl;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: Tanha;
+    background-color: #141414;
+    color: white;
+
+}
+
+
+.head{
+    background: linear-gradient(65deg,#426eff 40%,#ba42ff 80%);
+    /* background-image: url(../img.ir/backgroundweb22.jpg); */
+    padding: 80px;
+    color:white;
+    line-height: 3rem;
+    text-align: center;
+	border-radius: 15px;
+}
+
+.hearder {
+    height: 10vh;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ .head h1{
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #000000;
+      margin-bottom: 12px;
+      letter-spacing: 6px;
+}
+
+.logo{
+    font-size: 32px;
+    color: #0b1044;
+    font-weight: bold;
+}
+
+ /* کانتینر منو */
+  nav {
+    /* background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%); */
+	/* background-color: #362f2f; */
+  /* margin-top: 5px; */
+  display: inline-block;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+	border-radius: 15px;
+     position: sticky;
+     
+    
+  }
+  ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  ul.menu > li {
+    position: relative;
+  }
+  ul.menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.menu > li:hover > a {
+    transition: all 0.3s ease;
+    display: inline-block;
+     transform: scale(1.1) translateY(-5px);
+  color: #0099ff; /* مثلا رنگ نارنجی وقتی هاور شد */
+    /* background-color: #ffffff;
+	color: #000000; */
+	border-radius: 15px;
+  }
+
+  /* زیرمنو */
+  ul.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #313131;
+    min-width: 180px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    z-index: 100;
+  }
+  ul.submenu li a {
+    padding: 12px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  ul.submenu li a:hover {
+   background: linear-gradient(65deg,#ba42ff 40%,#5900ff 80%);
+   border-radius: 15px;
+  }
+  /* نمایش زیرمنو هنگام هاور روی آیتم اصلی */
+  ul.menu > li:hover > ul.submenu {
+    display: block;
+  }
+
+  /* برای راست به چپ بودن منو */
+  ul.menu, ul.submenu {
+    direction: rtl;
+  }
+
+
+  .hero {
+    color: #fff;
+    /* height: 90vh; */
+  box-shadow:5px 5px 10px #0059ff;
+     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-bottom: 50px;
+    border-radius: 32px;
+}
+.hero-container {
+    display: flex;
+    
+    
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+   
+}
+
+.hero-title {
+    font-size: 36px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-title span {
+color:rgb(0, 140, 255);
+}
+
+.hero-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ddd;
+    max-width: 600px;
+}
+
+
+/* سرچ باکس */
+
+   .search-container {
+    position: relative;
+    margin-left: 50px;
+    margin: 10px;
+    float: left;
+    width: 350px;
+     display: flex;
+     justify-content: flex-start;
+    align-items: center;
+  }
+
+  input.search-input {
+    width: 100%;
+    padding: 14px 50px 14px 20px;
+    font-family: tanha;
+    font-size: 18px;
+    border-radius: 32px;
+    border: 2px solid #c5c5c5;
+    background: #ffffff;
+    color: #eee;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input.search-input::placeholder {
+    color: #777;
+    transition: color 0.3s ease;
+  }
+
+  input.search-input:focus {
+    border-color: #008cff;
+    box-shadow: 0 0 10px #ffffffaa;
+  }
+
+  input.search-input:focus::placeholder {
+    color: #423f3f;
+  }
+
+  /* آیکون ذره‌بین */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 22px;
+    pointer-events: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  input.search-input:focus + .search-icon {
+    color: #00ccff;
+    transform: translateY(-50%) scale(1.3);
+  }
+
+  /* خط زیر ورودی */
+  .underline {
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    height: 3px;
+    width: 0;
+    background: #00e5ff;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  input.search-input:focus ~ .underline {
+    width: calc(100% - 40px);
+  }
+
+   .products-section {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #222;
+  }
+
+  .products-section {
+  max-width: 1200px; /* حداکثر عرض برای بخش محصولات */
+  margin: 40px auto;  /* فاصله از بالا و پایین + وسط چین */
+  padding: 0 20px;    /* فاصله داخلی کناری برای موبایل */
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center; /* وسط چین کردن کارت‌ها داخل گرید */
+}
+
+.product-card {
+  width: 100%;
+  max-width: 320px; /* محدود کردن عرض هر کارت */
+  background-color: #e4e4e4;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /* border: solid rgb(255, 255, 255); */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 160, 252, 0.856);
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transform: rotate(-17deg);
+}
+
+.product-info {
+  padding: 20px 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; /* وسط چین کردن متن داخل کارت */
+}
+
+.product-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.product-desc {
+  font-size: 0.95rem;
+  color: #666;
+  flex-grow: 1;
+}
+
+.product-price {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+  .product-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-image {
+    height: 160px;
+  }
+}
+
+  /* مقالات */
+
+ .articles-section {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a2533;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .articles-container {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .article-card {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.07);
+      width: 320px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-15px) scale(1.04);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .article-card:hover .article-image {
+      transform: scale(1.1);
+    }
+
+    .article-content {
+      padding: 25px 22px 30px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .article-title {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #34495e;
+      font-weight: 700;
+      line-height: 1.3;
+      min-height: 3.9em; /* for 2 lines */
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .article-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #7f8c9a;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .article-description {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #596777;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      overflow: hidden;
+      max-height: 5.7em; /* about 3 lines */
+      text-overflow: ellipsis;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #2980b9;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border: 2px solid transparent;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+    }
+
+    .read-more:hover {
+      background-color: #2980b9;
+      color: white;
+      border-color: #2980b9;
+    }
+
+    /* آیکون ساده فلش */
+    .read-more svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .read-more:hover svg {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 1024px) {
+      .articles-container {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .articles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+      }
+      .article-card {
+        width: 90%;
+        max-width: 420px;
+      }
+    }
+
+    /* فوتر */
+
+   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+
+.footer {
+  background: linear-gradient(135deg, #000000, #161622);
+  margin-top: 50px;
+  padding: 50px 20px 30px;
+  direction: rtl;
+  text-align: right;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 280px;
+  min-width: 280px;
+}
+
+.footer-section h2, .footer-section h3 {
+  color: #c0c0c0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-about p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #006eff;
+  transform: translateX(5px);
+}
+
+.footer-contact p {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contact i {
+  color: #0059ff;
+  min-width: 20px;
+  font-size: 18px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-left: 15px;
+  color: #bbb;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border: 1.5px solid #bbb;
+  border-radius: 50%;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #0077ff;
+  color: #121212;
+  border-color: #f39c12;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-section {
+    min-width: auto;
+  }
+  .footer-contact p {
+    justify-content: center;
+  }
+  .social-icons a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
